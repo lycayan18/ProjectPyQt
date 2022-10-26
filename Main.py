@@ -19,7 +19,7 @@ class MyWidget(QMainWindow):
             self.show_the_weather()
 
     def show_the_weather(self):
-        with open('koord_russia.csv') as csvfile:
+        with open('koord_russia.csv', encoding='utf-8') as csvfile:
             reader = csv.reader(csvfile, delimiter=';', quotechar='"')
             for index, row in enumerate(reader):
                 if row[0] == self.town_name:
