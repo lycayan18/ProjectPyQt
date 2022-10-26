@@ -51,7 +51,6 @@ class MyWidget(QMainWindow):
                 f"https://api.openweathermap.org/data/2.5/weather?lat={self.lat}&lon={self.lon}&appid={self.open_weather_token}&units={'metric'}&lang={'ru'}"
             )
             self.data = r2.json()
-            pprint(self.data)
             self.show_weather()
         except Exception:
             self.error = QMessageBox()
@@ -62,7 +61,6 @@ class MyWidget(QMainWindow):
             self.error.exec_()
 
     def errors(self, btn):
-        print(btn.text())
         if btn.text() == 'OK':
             self.country, ok_pressed1 = QInputDialog.getText(self, "Выбор страны",
                                                              "Пожалуйста введите название страны")
